@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>甲虫王者！熱血じゃんけんバトル</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="battle-stage">
+        <h1>🌳 甲虫王者じゃんけんバトル 🌳</h1>
+
+        <button id="bgm_toggle_btn" class="bgm-btn" onclick="toggleBgm()">🔇 BGM: OFF (ここを押して再生)</button>
+
+        <div id="effect_zone" class="hidden">
+            <div id="effect_emoji" class="giant-emoji"></div>
+            <h2 id="effect_text" class="flash-text"></h2>
+        </div>
+
+        <div id="main_zone">
+            <div class="status-container">
+                <div class="status-box">
+                    <h3>君のHP</h3>
+                    <div class="hp-bar-bg"><div id="player_hp_bar" class="hp-bar"></div></div>
+                    <p>HP: <span id="player_hp">100</span> / 100</p>
+                    <p>勝ち星: <span id="win_count">0</span></p>
+                </div>
+                <div class="status-box">
+                    <h3>ライバルのHP</h3>
+                    <div class="hp-bar-bg"><div id="enemy_hp_bar" class="hp-bar"></div></div>
+                    <p>HP: <span id="enemy_hp">100</span> / 100</p>
+                    <p>負け星: <span id="loss_count">0</span></p>
+                </div>
+            </div>
+
+            <div id="battle_scene">
+                <img id="main_battle_img" src="img/start.jpg" alt="バトル開始" class="battle-image">
+            </div>
+
+            <div id="result" class="result-display">わざを選んでバトル開始だ！</div>
+
+            <button id="reset_btn" class="btn hidden" onclick="resetGame()" style="background-color: #ffcc00; color: black; margin-bottom: 20px;">
+                もう一度バトルする！
+            </button>
+
+            <div class="player-zone">
+                <h2>⚡ 君のターン！わざを選べ！ ⚡</h2>
+                <button class="btn btn-gu" onclick="battle(0)">✊ ガンガンたたき</button>
+                <button class="btn btn-choki" onclick="battle(1)">✌️ チョキチョキはさみ</button>
+                <button class="btn btn-pa" onclick="battle(2)">🖐️ グルグルなげ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
